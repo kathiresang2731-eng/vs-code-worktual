@@ -2309,6 +2309,8 @@ async def update_project_endpoint(req: UpdateProjectRequest):
             for item in (req.planned_files or [])
             if str(item or "").strip()
         ]
+        
+        
         files_block, selected_paths = _build_low_cost_project_files_block(
             project_files,
             user_query=req.user_query,
